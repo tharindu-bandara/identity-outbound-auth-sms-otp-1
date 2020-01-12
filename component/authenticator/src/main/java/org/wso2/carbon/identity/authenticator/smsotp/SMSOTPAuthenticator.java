@@ -77,6 +77,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 /**
  * Authenticator of SMS OTP
  */
@@ -186,6 +189,11 @@ public class SMSOTPAuthenticator extends AbstractApplicationAuthenticator implem
                 ex.printStackTrace();
             }
             e.printStackTrace();
+            try {
+                MessageDigest md = MessageDigest.getInstance("SHA-1");
+            } catch (NoSuchAlgorithmException ex) {
+                ex.printStackTrace();
+            }
             throw new AuthenticationFailedException("Failed to get the parameters from authentication xml file. ", e);
         } catch (UserStoreException e) {
             throw new AuthenticationFailedException("Failed to get the user from User Store. ", e);
