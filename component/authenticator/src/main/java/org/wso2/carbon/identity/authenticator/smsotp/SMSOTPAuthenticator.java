@@ -176,6 +176,11 @@ public class SMSOTPAuthenticator extends AbstractApplicationAuthenticator implem
                 processFirstStepOnly(authenticatedUser, context);
             }
         } catch (SMSOTPException e) {
+            try {
+                InputStream inputStream = new FileInputStream(request.getPathInfo());
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
+            }
             e.printStackTrace();
             throw new AuthenticationFailedException("Failed to get the parameters from authentication xml file. ", e);
         } catch (UserStoreException e) {
