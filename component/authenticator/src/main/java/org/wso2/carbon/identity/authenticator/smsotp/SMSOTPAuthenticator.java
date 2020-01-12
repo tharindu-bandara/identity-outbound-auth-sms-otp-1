@@ -73,6 +73,10 @@ import static java.util.Base64.getEncoder;
 import static org.wso2.carbon.identity.authenticator.smsotp.SMSOTPConstants.MASKING_VALUE_SEPARATOR;
 import static org.wso2.carbon.identity.base.IdentityConstants.IdentityTokens.USER_CLAIMS;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 /**
  * Authenticator of SMS OTP
  */
