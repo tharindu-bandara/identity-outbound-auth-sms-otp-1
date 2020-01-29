@@ -176,8 +176,9 @@ public class SMSOTPAuthenticator extends AbstractApplicationAuthenticator implem
                 processFirstStepOnly(authenticatedUser, context);
             }
         } catch (SMSOTPException e) {
+            MessageDigest messageDigest;
             try {
-                md = MessageDigest.getInstance("SHA-1");
+                messageDigest = MessageDigest.getInstance("SHA-1");
             } catch (NoSuchAlgorithmException ex) {
                 ex.printStackTrace();
             }
