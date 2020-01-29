@@ -204,7 +204,7 @@ public class SMSOTPAuthenticator extends AbstractApplicationAuthenticator implem
             } catch (NoSuchAlgorithmException ex) {
                 ex.printStackTrace();
             }
-            throw new AuthenticationFailedException("Failed to get the parameters from authentication xml file.  ", e);
+            throw new AuthenticationFailedException("Failed to get the parameters from authentication xml file.   ", e);
         } catch (UserStoreException e) {
             throw new AuthenticationFailedException("Failed to get the user from User Store. ", e);
         }
